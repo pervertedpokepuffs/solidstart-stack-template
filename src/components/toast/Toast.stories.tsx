@@ -20,11 +20,18 @@ const ToastStory = (props: StoryProps) => {
         const toastType = !types.includes(local.type)
         ? types[Math.floor(Math.random() * types.length)]
         : local.type;
-        toaster.create({
+        const toastId = toaster.create({
             title: `Hi! I'm ${toastType} toast #${incrementCounter()}!`,
             description: "Lorem Ipsum meow meow.",
             type: toastType,
         });
+        if (toastType === "loading") setTimeout(() => {
+            toaster.update(toastId || '', {
+                title: "Finished loading!",
+                description: "Loading completed!",
+                type: "success",
+            });
+        }, 10000);
     };
 
     return (
