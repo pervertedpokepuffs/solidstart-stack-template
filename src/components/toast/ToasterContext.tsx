@@ -1,19 +1,23 @@
 import { createToaster, CreateToasterReturn } from "@ark-ui/solid";
 import { createContext, JSX, useContext } from "solid-js";
 
-const defaultToaster = createToaster({
-    placement: "bottom-end",
-    gap: 24,
-    overlap: true,
-});
+const ToasterContext = createContext<CreateToasterReturn>();
 
-const ToasterContext = createContext<CreateToasterReturn>(defaultToaster);
-
-export const useToaster = () => useContext(ToasterContext);
+export const useToaster = () => {
+    const context = useContext(ToasterContext);
+    if (!context) throw new Error("useToaster: cannot find a ToasterContext");
+    return context;
+};
 
 export const ToasterProvider = (props: { children: JSX.Element }) => {
+    const toaster = createToaster({
+        placement: "bottom-end",
+        gap: 24,
+        overlap: true,
+    });
+
     return (
-        <ToasterContext.Provider value={defaultToaster}>
+        <ToasterContext.Provider value={toaster}>
             {props.children}
         </ToasterContext.Provider>
     );
