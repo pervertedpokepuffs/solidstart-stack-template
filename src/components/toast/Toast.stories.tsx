@@ -68,10 +68,17 @@ export const Random: Story = {
     },
 };
 
-export const InfoOrLoading: Story = {
+export const Info: Story = {
     args: {
         children: "Click Me!",
         type: "info",
+    },
+};
+
+export const Loading: Story = {
+    args: {
+        children: "Click Me!",
+        type: "loading",
     },
 };
 
