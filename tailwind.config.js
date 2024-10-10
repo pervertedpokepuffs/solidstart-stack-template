@@ -4,6 +4,19 @@ export default {
     darkMode: ["selector", '[data-mode="dark"]'],
     theme: {
         extend: {
+            keyframes: {
+                slidedown: {
+                    "0%": {
+                        transform: "translateY(-2rem)",
+                    },
+                    "100%": {
+                        transform: "translateY(0)",
+                    },
+                },
+            },
+            animation: {
+                slidedown: "500ms ease-out 0s 1 normal none running slidedown"
+            },
             colors: {
                 primary: {
                     DEFAULT: "#22c55e",
