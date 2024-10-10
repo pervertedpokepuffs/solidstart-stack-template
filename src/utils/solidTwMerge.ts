@@ -4,10 +4,10 @@ import { ClassNameValue, twMerge } from "tailwind-merge";
 /**
  * Styling props of a typical SolidJS component.
  *
- * Get with `const [styling, rest] = splitProps(['class', 'classList', 'style'])`
+ * Get with `const [styling, rest] = splitProps(props, ['class', 'classList'])`
  */
 
-interface SolidStylingProps {
+export interface SolidStylingProps {
     class?: string;
     classList?: { [k: string]: boolean | undefined };
 }
@@ -19,9 +19,9 @@ interface SolidStylingProps {
  * @returns string
  */
 export const solidTwMerge = (
-    props: SolidStylingProps,
+    props?: SolidStylingProps,
     ...defaultClassLists: ClassNameValue[]
 ) => {
     const classLists = twMerge(...defaultClassLists);
-    return twMerge(classLists, props.class, clsx(props.classList));
+    return twMerge(classLists, props?.class || '', clsx(props?.classList || []));
 };
