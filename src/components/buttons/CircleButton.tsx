@@ -28,7 +28,7 @@ export const CircleButton: Component<ButtonProps> = (props) => {
                 "aspect-square",
             ],
             {
-                "bg-slate-50 dark:bg-slate-500 text-current hover:bg-slate-200 active:bg-slate-300 dark:hover:bg-slate-400 dark:active:bg-slate-300 focus:ouline-none focus:ring focus:ring-slate-200":
+                "bg-slate-50 dark:text-white dark:bg-slate-500 text-current hover:bg-slate-200 active:bg-slate-300 dark:hover:bg-slate-400 dark:active:bg-slate-300 focus:ouline-none focus:ring focus:ring-slate-200":
                     !local?.buttonColor,
                 "bg-primary text-white hover:bg-primary-600 active:bg-primary-700 dark:hover:bg-primary-400 dark:active:bg-primary-300 focus:outline-none focus:ring focus:ring-primary-300":
                     local?.buttonColor == "primary",
