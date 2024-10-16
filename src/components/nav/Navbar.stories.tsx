@@ -17,7 +17,7 @@ const NavbarStory = () => (
             </Navbar.MenuTrigger>
         </Navbar.Bar>
         <Navbar.Menu>
-            <img class="h-full object-none object-left" src="https://icatcare.org/app/uploads/2018/07/Elderly-cats.png" />
+            <img class="h-full object-cover object-left" src="https://icatcare.org/app/uploads/2018/07/Elderly-cats.png" />
         </Navbar.Menu>
     </Navbar.Root>
 );
