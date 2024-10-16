@@ -9,7 +9,7 @@ export default (type?: "primary" | "secondary" | "tertiary") =>
         "border-slate-200",
         "hover:border-slate-500",
         "bg-slate-50 dark:bg-slate-500",
-        "text-current dark:text-slate-200",
+        "text-current",
         "hover:bg-slate-200 dark:hover:bg-slate-400",
         "active:bg-slate-300 dark:active:bg-slate-300",
         "focus:outline-none focus:ring focus:ring-slate-200",
