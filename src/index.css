@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,29 +6,38 @@
 body {
   margin: 40px;
   background: #ddd;
+
 }
+
+.centered-header { 
+  text-align: center; 
+} 
 
 /* Define the card styling */
 /* apps.module.css or relevant CSS file */
 
+/* Ensure the card container has relative positioning */
 .card {
-  padding: 0; /* Remove default padding to avoid spacing issues */
-  color: white; /* White text for readability */
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden; /* Ensures child elements stay within bounds */
+  position: relative; /* Set relative positioning for child elements like the overlay */
+  overflow: hidden;   /* Ensure content doesn't spill out */
+  background-color: theme('colors.white');
+  border-radius: theme('borderRadius.lg');
+  padding: 0;         /* Remove padding for consistent layout */
+  box-shadow: theme('boxShadow.xl');
+  height: 200px;      /* Set a fixed height for cards */
+  width: 100%;        /* Cards take full grid width */
 }
 
-/* Overlay inside card for text readability */
+/* Overlay for text placement */
 .card-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with opacity */
-  padding: 20px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  position: absolute;           /* Position the overlay inside the card */
+  bottom: 0;                    /* Align to the bottom */
+  width: 100%;                  /* Full width of the card */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  color: white;                 /* Make text readable */
+  padding: 10px;                /* Add padding for spacing */
+  text-align: center;           /* Center align text horizontally */
+  font-size: 1.25rem;           /* Adjust text size */
 }
 
 

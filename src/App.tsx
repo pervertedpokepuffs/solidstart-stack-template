@@ -1,4 +1,5 @@
 import Card from './components/card/Card';
+import broadcastImage from './assets/broadcast.jpg';
 
 function App() {
   const handleClick = (title: string) => {
@@ -8,7 +9,7 @@ function App() {
   return (
     <div class="container m-auto">
       <header>
-        <h1>attempt 1</h1>
+        <h1 class="centered-header">MAIN PAGE</h1>
       </header>
       
       <div class="grid grid-cols-4 gap-10 my-4">
@@ -16,22 +17,38 @@ function App() {
           flat={false}
           rounded={true}
           onClick={() => handleClick("BROADCAST")}
-          backgroundImage="/assets/broadcast.jpg" // Replace with actual image URL
+          backgroundImage= {broadcastImage}
         >
           <h2>BROADCAST</h2>
         </Card>
 
-        <Card flat={false} rounded={true} onClick={() => handleClick("WEATHER API")}>
+        <Card
+          flat={false}
+          rounded={true}
+          onClick={() => handleClick("WEATHER API")}
+          backgroundImage= {broadcastImage}
+        >
           <h2>WEATHER API</h2>
         </Card>
 
-        <Card flat={false} rounded={true} onClick={() => handleClick("DB SETTING")}>
+        <Card
+          flat={false}
+          rounded={true}
+          onClick={() => handleClick("DB SETTNG")}
+          backgroundImage= {broadcastImage}
+        >
           <h2>DB SETTING</h2>
         </Card>
 
-        <Card flat={false} rounded={true} onClick={() => handleClick("RESULT")}>
+        <Card
+          flat={false}
+          rounded={true}
+          onClick={() => handleClick("RESULT")}
+          backgroundImage= {broadcastImage}
+        >
           <h2>RESULT</h2>
         </Card>
+
       </div>
     </div>
   );
