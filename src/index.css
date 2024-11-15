@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-html:where([data-mode="dark"]) {
-    @apply text-slate-200
+body {
+  margin: 40px;
+  background: #ddd;
+}
+
+/* Define the card styling */
+/* apps.module.css or relevant CSS file */
+
+.card {
+  padding: 0; /* Remove default padding to avoid spacing issues */
+  color: white; /* White text for readability */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden; /* Ensures child elements stay within bounds */
+}
+
+/* Overlay inside card for text readability */
+.card-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with opacity */
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* Flexbox layout for card content */
+.card-content {
+  display: flex;  /* Use flexbox to align children horizontally */
+  flex-direction: row; /* Align elements horizontally */
+  align-items: center;  /* Vertically center the content */
+  justify-content: space-between; /* Space out the children */
+}
+
+/* Add hover and active animations */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.card:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

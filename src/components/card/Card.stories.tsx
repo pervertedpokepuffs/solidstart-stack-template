@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "storybook-solidjs";
 
-import { Card } from "./Card";
+import Card from "./Card";
 
 export const TallCard: Story = {
     args: {
